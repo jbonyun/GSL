@@ -87,7 +87,9 @@ public:
 
     constexpr T get() const
     {
+#ifndef GSL_NOT_NULL_ZERO_COST
         Ensures(ptr_ != nullptr);
+#endif
         return ptr_;
     }
 
